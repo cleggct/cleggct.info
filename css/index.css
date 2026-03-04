@@ -1,44 +1,96 @@
 /* Defaults */
 :root {
-	--font-family: -apple-system, system-ui, sans-serif;
-	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+	--font-family: "Sorts Mill Goudy", Georgia, serif;
+	--font-family-monospace: "Inconsolata", Consolas, Menlo, Monaco, monospace;
+}
+@font-face {
+	font-family: "Sporting Grotesque";
+	src: url("/fonts/Sporting_Grotesque-Regular_web.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Sporting Grotesque";
+	src: url("/fonts/Sporting_Grotesque-Bold_web.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "Libre Baskerville";
+	font-style: normal;
+	font-weight: 400;
+	src: url("/fonts/libre-baskerville-v24-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "Libre Baskerville";
+	font-style: normal;
+	font-weight: 700;
+	src: url("/fonts/libre-baskerville-v24-latin-700.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Sorts Mill Goudy";
+	src: url("/fonts/GoudyStM-webfont.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Sorts Mill Goudy";
+	src: url("/fonts/GoudyStM-Italic-webfont.woff") format("woff");
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* inconsolata-regular - latin */
+@font-face {
+	font-display: swap;
+	font-family: "Inconsolata";
+	font-style: normal;
+	font-weight: 400;
+	src: url("/fonts/inconsolata-v37-latin-regular.woff2") format("woff2");
 }
 
 /* Theme colors */
 :root {
-	--color-gray-20: #e0e0e0;
-	--color-gray-50: #C0C0C0;
-	--color-gray-90: #333;
+	--ink: #1a1410;
+	--ink-light: #1a1410;
+	--paper: #f8f7f4;
+	--rule: 1px solid var(--ink-light);
 
-	--background-color: #fff;
+	--background-color: var(--paper);
 
-	--text-color: var(--color-gray-90);
-	--text-color-link: #082840;
-	--text-color-link-active: #5f2b48;
-	--text-color-link-visited: #17050F;
+	--text-color: var(--ink);
+	--text-color-link: var(--ink);
+	--text-color-link-active: var(--paper);
+	--text-color-link-active-highlight: var(--ink);
+	--text-color-link-visited: var(--ink);
 
 	--syntax-tab-size: 2;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color-gray-20: #e0e0e0;
-		--color-gray-50: #C0C0C0;
-		--color-gray-90: #dad8d8;
-
-		/* --text-color is assigned to --color-gray-_ above */
-		--text-color-link: #1493fb;
-		--text-color-link-active: #6969f7;
-		--text-color-link-visited: #a6a6f8;
-
-		--background-color: #15202b;
+		--ink: #f8f7f4;
+		--ink-light: #736e6a;
+		--paper: #1a1410;
 	}
 }
-
 
 /* Global stylesheet */
 * {
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 @view-transition {
@@ -47,7 +99,8 @@
 
 html,
 body {
-	padding: 0;
+	font-size: 1.1rem;
+	line-height: 1.6;
 	margin: 0 auto;
 	font-family: var(--font-family);
 	color: var(--text-color);
@@ -57,7 +110,24 @@ html {
 	overflow-y: scroll;
 }
 body {
+	margin-top: 1em;
+	margin-bottom: 1em;
 	max-width: 40em;
+	border: var(--rule);
+	height: max-content;
+	min-height: 100vh;
+	position: relative;
+}
+
+.home-link,
+h1 {
+	font-family: "Sporting Grotesque", sans-serif;
+}
+
+h2,
+h3,
+h4 {
+	font-family: "Libre Baskerville", serif;
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
@@ -72,21 +142,32 @@ body {
 }
 
 /* Fluid images via https://www.zachleat.com/web/fluid-images/ */
-img{
-  max-width: 100%;
+img {
+	max-width: 100%;
+	box-shadow:
+		0 0 0 1px var(--ink-light),
+		0 0 0 2px var(--paper),
+		0 0 0 3px var(--ink-light);
+	margin: 5px 0;
+	padding: 5px 0;
 }
 img[width][height] {
-  height: auto;
+	height: auto;
 }
 img[src$=".svg"] {
-  width: 100%;
-  height: auto;
-  max-width: none;
+	width: 100%;
+	height: auto;
+	max-width: none;
 }
 video,
 iframe {
 	width: 100%;
 	height: auto;
+	box-shadow:
+		0 0 0 1px var(--ink-light),
+		0 0 0 2px var(--paper),
+		0 0 0 3px var(--ink-light);
+	margin: 5px 0;
 }
 iframe {
 	aspect-ratio: 16/9;
@@ -111,7 +192,7 @@ a[href]:visited {
 }
 a[href]:hover,
 a[href]:active {
-	color: var(--text-color-link-active);
+	text-decoration-style: double;
 }
 
 main,
@@ -122,16 +203,12 @@ main :first-child {
 	margin-top: 0;
 }
 
-header {
-	border-bottom: 1px dashed var(--color-gray-20);
-}
-
 #skip-link {
 	text-decoration: none;
 	background: var(--background-color);
-	color: var(--text-color);
+	color: var(--ink);
 	padding: 0.5rem 1rem;
-	border: 1px solid var(--color-gray-90);
+	border: var(--rule);
 	border-radius: 2px;
 }
 
@@ -147,9 +224,9 @@ header {
 .links-nextprev {
 	display: flex;
 	justify-content: space-between;
-	gap: .5em 1em;
+	gap: 0.5em 1em;
 	list-style: "";
-	border-top: 1px dashed var(--color-gray-20);
+	border-top: var(--rule);
 	padding: 1em 0;
 }
 .links-nextprev > * {
@@ -170,9 +247,10 @@ table th {
 pre,
 code {
 	font-family: var(--font-family-monospace);
+	padding: 0 0.15em; /* adds space inside the code element */
 }
 pre:not([class*="language-"]) {
-	margin: .5em 0;
+	margin: 0.5em 0;
 	line-height: 1.375; /* 22px /16 */
 	-moz-tab-size: var(--syntax-tab-size);
 	-o-tab-size: var(--syntax-tab-size);
@@ -193,26 +271,28 @@ code {
 
 /* Header */
 header {
-	display: flex;
-	gap: 1em;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1em;
+	display: grid;
+	border-bottom: var(--rule);
+	padding: 0 1em;
+	text-decoration: none;
 }
 .home-link {
 	flex-grow: 1;
-	font-size: 1em; /* 16px /16 */
+	font-size: 3rem; /* 16px /16 */
 	font-weight: 700;
+	text-transform: uppercase;
 }
 .home-link:link:not(:hover) {
 	text-decoration: none;
+}
+.home-link:link:hover {
+	text-decoration: underline;
 }
 
 /* Nav */
 .nav {
 	display: flex;
-	gap: .5em 1em;
+	gap: 0.5em 1em;
 	padding: 0;
 	margin: 0;
 	list-style: none;
@@ -220,8 +300,11 @@ header {
 .nav-item {
 	display: inline-block;
 }
-.nav-item a[href]:not(:hover) {
+.nav-item a[href] {
 	text-decoration: none;
+}
+.nav-item a[href]:hover {
+	text-decoration: underline;
 }
 .nav a[href][aria-current="page"] {
 	text-decoration: underline;
@@ -252,20 +335,17 @@ header {
 .postlist-date,
 .postlist-item:before {
 	font-size: 0.8125em; /* 13px /16 */
-	color: var(--color-gray-90);
+	color: var(--text-color);
 }
 .postlist-date {
 	word-spacing: -0.5px;
 }
 .postlist-link {
 	font-size: 1.1875em; /* 19px /16 */
-	font-weight: 700;
+	font-weight: normal;
 	flex-basis: calc(100% - 1.5rem);
-	padding-left: .25em;
-	padding-right: .5em;
-	text-underline-position: from-font;
-	text-underline-offset: 0;
-	text-decoration-thickness: 1px;
+	padding-left: 0.25em;
+	padding-right: 0.5em;
 }
 .postlist-item-active .postlist-link {
 	font-weight: bold;
@@ -287,7 +367,7 @@ header {
 .post-metadata {
 	display: inline-flex;
 	flex-wrap: wrap;
-	gap: .5em;
+	gap: 0.5em;
 	list-style: none;
 	padding: 0;
 	margin: 0;
@@ -295,4 +375,3 @@ header {
 .post-metadata time {
 	margin-right: 1em;
 }
-

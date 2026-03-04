@@ -1,7 +1,7 @@
 {
-	"name": "eleventy-base-blog",
+	"name": "cleggct.info",
 	"version": "9.0.0",
-	"description": "A starter repository for a blog web site using the Eleventy site generator.",
+	"description": "My cleggct.info blog now built with eleventy!",
 	"type": "module",
 	"scripts": {
 		"build": "npx @11ty/eleventy",
@@ -18,9 +18,9 @@
 		"url": "git://github.com/11ty/eleventy-base-blog.git"
 	},
 	"author": {
-		"name": "Zach Leatherman",
-		"email": "zachleatherman@gmail.com",
-		"url": "https://zachleat.com/"
+		"name": "Christa Clegg",
+		"email": "cleggct@gmail.com",
+		"url": "https://cleggct.info/"
 	},
 	"license": "MIT",
 	"engines": {

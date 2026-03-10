@@ -228,7 +228,7 @@ table th {
 pre,
 code {
 	font-family: var(--font-family-monospace);
-	font-size: 0.7rem;
+	font-size: 0.8rem;
 	padding: 0 0.15em; /* adds space inside the code element */
 }
 pre:not([class*="language-"]) {

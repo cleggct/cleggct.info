@@ -1,8 +1,8 @@
 ---
 title: Matrix (-like) Effect
 description: Kinda looks like the matrix!
-date: 2024-12-15
-tags: number 1
+date: 2025-01-27
+tags: demo
 ---
 
 During the winter of 2024 I was applying to jobs, checking out the websites of various companies and I came across one that
@@ -10,6 +10,8 @@ had this cool animation on the homepage of these walls of binary data stretching
 company, I think it was some local software house, but I still remember the effect. It was pretty slick. I guess that's the
 kind of stuff you come up with when you bill by the hour. Seeing that made me want to try my hand at doing some kind of
 matrix-inspired shader effect, so this is what I came up with.
+
+<a href="/demos/matrix">Fullscreen</a>
 
 <iframe src="/demos/matrix" title="Matrix Effect Demo"> </iframe>
 
@@ -26,9 +28,23 @@ scanlines with sine and cosine operations. The result is something kind of lo-fi
 it but I kind of like it. I made it amber in color because I love those old amber displays like in the Compaq Portable 3 and
 the Grid Compass.
 
-## Shader Source
+## Source
 
-```glsl
+```
+import * as THREE from "three";
+
+const vertexShader = `
+varying vec2 vUv;
+varying vec3 vPosition;
+
+void main()	{
+    vUv = uv;
+    vPosition = position;
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+}
+`;
+
+const fragmentShader = `
 varying vec2 vUv;
 varying vec3 vPosition;
 
@@ -94,4 +110,82 @@ void main()	{
   color = color * vec4(vec3(abs(sin(random(block) * 6.28 + 3.14 * time))), 1.0) + scanlines;
   gl_FragColor = color;
 }
+`;
+
+// Scene setup
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(
+	75,
+	window.innerWidth / window.innerHeight,
+	0.1,
+	1000,
+);
+camera.position.z = -5;
+camera.fov = 75;
+
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+renderer.debug.onShaderError = (gl, program, vertexShader, fragmentShader) => {
+	const vertexShaderSource = gl.getShaderSource(vertexShader);
+	const fragmentShaderSource = gl.getShaderSource(fragmentShader);
+
+	console.groupCollapsed("vertexShader");
+	console.log(vertexShaderSource);
+	console.groupEnd();
+
+	console.groupCollapsed("fragmentShader");
+	console.log(fragmentShaderSource);
+	console.groupEnd();
+};
+
+// Uniforms
+const uniforms = {
+	time: { value: 0 },
+	font: {
+		value: new THREE.TextureLoader().load(
+			"data:image/png;base64,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",
+		),
+	},
+};
+
+// Geometry
+const planeGeometry = new THREE.PlaneGeometry(100, 100);
+const shaderMaterial = new THREE.ShaderMaterial({
+	vertexShader,
+	fragmentShader,
+	uniforms,
+});
+
+const leftPlane = new THREE.Mesh(planeGeometry, shaderMaterial);
+leftPlane.position.set(-20, 0, -20);
+leftPlane.rotation.y = Math.PI / 2.5;
+
+const rightPlane = new THREE.Mesh(planeGeometry, shaderMaterial);
+rightPlane.position.set(20, 0, -20);
+rightPlane.rotation.y = -Math.PI / 2.5;
+
+scene.add(leftPlane);
+scene.add(rightPlane);
+
+// Animation loop
+const clock = new THREE.Clock();
+const animate = () => {
+	requestAnimationFrame(animate);
+	uniforms.time.value = clock.getElapsedTime();
+	renderer.render(scene, camera);
+};
+
+animate();
+
+// Resize handling
+const onResize = () => {
+	const { innerWidth, innerHeight } = window;
+	camera.aspect = innerWidth / innerHeight;
+	camera.updateProjectionMatrix();
+	renderer.setSize(innerWidth, innerHeight);
+};
+
+window.addEventListener("resize", onResize);
 ```

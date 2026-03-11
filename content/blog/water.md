@@ -1,3 +1,41 @@
+---
+title: Water Effect
+description: So many dot products!
+date: 2025-11-10
+tags: demo
+---
+
+Going into this I had no idea how to write a water shader but once I started looking into it I learned that you can make
+pretty decent looking water by just layering on a few relatively simple effects. This shader consists of scrolling two normal
+maps at different rates, adding in Blinn-Phong lighting and fresnel shading, and running a grid-based finite-difference Laplacian
+simulation for the mouse-based ripples. I also added a skybox as the semi-transparent water against a black background looked
+a bit ugly, and then I had the idea to add skybox reflections which turned out to be surprisingly easy and really helped sell
+the effect. The geometry itself doesn't actually change at all except for slight sine-based undulations.
+
+<a href="/demos/water">Fullscreen</a>
+
+<iframe src="/demos/water" title="Water Shader Demo"> </iframe>
+
+## Explanation
+
+To start with, I am scrolling two water normal maps at different rates and directions to give the appearance of an uneven
+rippled surface. A normal is sampled from each of these and the two are combined. This normal is then combined again with the
+normal sampled from the data texture for the ripple map. Then I am doing
+Blinn-Phong lighting followed by fresnel shading to make the water shine a bit and get the edges of the ripples to pop. This
+amounts to performing some more vector math with the previously computed normal vector, camera vector and world vector to
+compute color adjustments for the current fragment. After that comes the skybox reflection and refraction which involve
+sampling the skybox texture at a point computed from the normal vector, camera vector and world vector to compute more color
+adjustments which are blended with those computed previously to determine the final color of the fragment. You can read more
+about fresnel shading as well as environmental reflections and refractions <a href="https://developer.download.nvidia.com/CgTutorial/cg_tutorial_chapter07.html">here</a>.
+
+That covers how the water shader works. The ripple simulation is a grid-based finite-difference Laplacian where the ripples
+are produced by adding a gaussian source at the desired location in the grid. You can read more about finite-difference
+Laplacian approximation <a href="https://gpuopen.com/learn/amd-lab-notes/amd-lab-notes-finite-difference-docs-laplacian_part1/">here</a>.
+If you want to learn more about water simulations check out <a href="https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models">this</a> and <a href="https://developer.nvidia.com/gpugems/gpugems2/part-ii-shading-lighting-and-shadows/chapter-18-using-vertex-texture-displacement">this</a>.
+
+## Source
+
+```
 import * as THREE from "three";
 
 const SIZE = 512;
@@ -374,3 +412,5 @@ function animate() {
 function getIndex(x, y) {
 	return y * (SIZE + 1) + x;
 }
+
+```

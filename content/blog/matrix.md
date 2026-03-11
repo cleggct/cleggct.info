@@ -20,7 +20,7 @@ matrix-inspired shader effect, so this is what I came up with.
 I found a bitmap of some 8 by 8 font from a Hitachi LCD display and converted it to a base64 string that ThreeJS could load as
 a data texture that way I could bundle it in with the script itself. Used some algebra to come up with grid coordinates for
 each fragment based on the UV coordinate and assign each one a random (ish) character from the bitmap which is sampled
-according to the fragment's position relative to its grid cell. Lots of modulus operations. The pseudo random character
+according to the fragment's position relative to its grid cell. Lots of modulus operations. The random character
 selection is also made a variable of some truncated portion of the current time to get the characters to update with time. I
 also gave each grid character a random amount of variability which is why some flicker between many different characters and
 others stay more or less the same. Then I layered on some undulating per-character brightnesses and some vertically scrolling

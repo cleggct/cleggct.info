@@ -4,6 +4,7 @@ const eleventyNavigation = {
 	order: 3
 };
 ---
+
 # About
 
-I am a person that writes stuff.
+I'm Christa and this is my blog!

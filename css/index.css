@@ -167,6 +167,7 @@ li {
 
 a[href] {
 	color: var(--text-color-link);
+	text-decoration-thickness: 2px;
 }
 a[href]:visited {
 	color: var(--text-color-link-visited);
@@ -174,6 +175,7 @@ a[href]:visited {
 a[href]:hover,
 a[href]:active {
 	text-decoration-style: double;
+	text-decoration-thickness: 2px;
 }
 
 main,
@@ -269,6 +271,7 @@ header {
 }
 .home-link:link:hover {
 	text-decoration: underline;
+	text-decoration-thickness: 2px;
 }
 
 /* Nav */
@@ -287,9 +290,11 @@ header {
 }
 .nav-item a[href]:hover {
 	text-decoration: underline;
+	text-decoration-thickness: 2px;
 }
 .nav a[href][aria-current="page"] {
 	text-decoration: underline;
+	text-decoration-thickness: 2px;
 }
 
 /* Posts list */

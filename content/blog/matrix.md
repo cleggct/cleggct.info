@@ -5,17 +5,19 @@ date: 2025-01-27
 tags: demo
 ---
 
+<iframe src="/demos/matrix" title="Matrix Effect Demo"> </iframe>
+
+<a href="/demos/matrix">Fullscreen</a>
+
+## Explanation
+
 During the winter of 2024 I was applying to jobs, checking out the websites of various companies and I came across one that
 had this cool animation on the homepage of these walls of binary data stretching into the distance. I don't even remember the
 company, I think it was some local software house, but I still remember the effect. It was pretty slick. I guess that's the
 kind of stuff you come up with when you bill by the hour. Seeing that made me want to try my hand at doing some kind of
 matrix-inspired shader effect, so this is what I came up with.
 
-<a href="/demos/matrix">Fullscreen</a>
-
-<iframe src="/demos/matrix" title="Matrix Effect Demo"> </iframe>
-
-## Explanation
+<br>
 
 I found a bitmap of some 8 by 8 font from a Hitachi LCD display and converted it to a base64 string that ThreeJS could load as
 a data texture that way I could bundle it in with the script itself. Used some algebra to come up with grid coordinates for

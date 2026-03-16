@@ -5,6 +5,16 @@ date: 2024-11-17
 tags: demo
 ---
 
+<iframe src="/demos/mandelbrot" title="Mandelbrot Viewer Demo"> </iframe>
+
+<a href="/demos/mandelbrot">Fullscreen</a>
+
+## Explanation
+
+Click and drag to select a region to zoom in on. Right click to zoom back out.
+
+<br>
+
 This was my first time implementing the continuous coloration algorithm for the Mandelbrot
 set. I had always been intimidated by this algorithm as the mathematics looked quite
 strange at first glance, and complex analysis was not my strongest area. I still do not
@@ -16,13 +26,7 @@ challenging problem in putting together this demo. Maybe next time I write a Man
 renderer I will finally get around to learning how to simulate double precision floating
 point values with a float vector in order to maximize zoom depth.
 
-<a href="/demos/mandelbrot">Fullscreen</a>
-
-<iframe src="/demos/mandelbrot" title="Mandelbrot Viewer Demo"> </iframe>
-
-Click and drag to select a region to zoom in on. Right click to zoom back out.
-
-## Explanation
+<br>
 
 <a href="https://en.wikipedia.org/wiki/Plotting_algorithms_for_the_Mandelbrot_set#Continuous_(smooth)_coloring">The Wikipedia
 page</a> on plotting algorithms for the Mandelbrot set has a pretty decent explanation of

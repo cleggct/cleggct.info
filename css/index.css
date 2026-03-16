@@ -357,3 +357,19 @@ header {
 .post-metadata time {
 	margin-right: 1em;
 }
+
+/* Mobile layout */
+@media (max-width: 44em) {
+	body {
+		margin-top: 0;
+		margin-bottom: 0;
+		max-width: 100%;
+		border: none;
+	}
+	.home-link {
+		font-size: 2rem;
+	}
+	h1 {
+		font-size: 1.5rem;
+	}
+}

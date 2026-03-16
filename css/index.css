@@ -276,7 +276,7 @@ header {
 }
 .home-link:link:hover {
 	text-decoration: underline;
-	text-decoration-thickness: 2px;
+	text-decoration-thickness: 0.08em;
 }
 
 /* Nav */

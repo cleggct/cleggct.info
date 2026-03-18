@@ -2,7 +2,7 @@
 title: Mandelbrot Viewer
 description: Now with more potential!
 date: 2024-11-17
-tags: demo
+tags: demo blog
 ---
 
 <iframe src="/demos/mandelbrot" title="Mandelbrot Viewer Demo"> </iframe>

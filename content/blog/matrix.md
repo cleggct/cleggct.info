@@ -2,7 +2,7 @@
 title: Matrix (-like) Effect
 description: Kinda looks like the matrix!
 date: 2025-01-27
-tags: demo
+tags: demo blog
 ---
 
 <iframe src="/demos/matrix" title="Matrix Effect Demo"> </iframe>

@@ -12,13 +12,13 @@ www.zfight.com
 
 ## Getting Started
 
-Install dependencies
+### Install dependencies
 
 ```
 npm install
 ```
 
-Run Eleventy
+### Run Eleventy
 
 Generate a production-ready build to the `_site` folder:
 

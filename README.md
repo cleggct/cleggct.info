@@ -1,33 +1,24 @@
-# eleventy-base-blog v9
+# cleggct.info
 
-A starter repository showing how to build a blog with the [Eleventy](https://www.11ty.dev/) site generator (using the [v3.0 release](https://github.com/11ty/eleventy/releases/tag/v3.0.0)).
+Shamelessly forked from [eleventy-base-blog v9](https://github.com/11ty/eleventy-base-blog.git)
+
+Check out [Eleventy](https://www.11ty.dev/)
+
+## Credit for the Skybox Textures
+
+I got the images for the skybox in the water scene from opengameart.org, credit goes to Jockum Skoglund aka hipshot
+hipshot@zfight.com
+www.zfight.com
 
 ## Getting Started
 
-- [Want a more generic/detailed getting started guide?](https://www.11ty.dev/docs/getting-started/)
-
-1. Make a directory and navigate to it:
-
-```
-mkdir my-blog-name
-cd my-blog-name
-```
-
-2. Clone this Repository
-
-```
-git clone https://github.com/11ty/eleventy-base-blog.git .
-```
-
-_Optional:_ Review `eleventy.config.js` and `_data/metadata.js` to configure the site’s options and data.
-
-3. Install dependencies
+Install dependencies
 
 ```
 npm install
 ```
 
-4. Run Eleventy
+Run Eleventy
 
 Generate a production-ready build to the `_site` folder:
 
@@ -115,8 +106,3 @@ If your site enforces a [Content Security Policy](https://developer.mozilla.org/
 1. In `base.njk`, remove `<style>{% getBundle "css" %}</style>` and uncomment `<link rel="stylesheet" href="{% getBundleFileUrl "css" %}">`
 2. Configure the server with the CSP directive `style-src: 'unsafe-inline'` (less secure).
 
-## Credit for the Skybox Textures
-
-I got the images for the skybox in the water scene from opengameart.org, credit goes to Jockum Skoglund aka hipshot
-hipshot@zfight.com
-www.zfight.com

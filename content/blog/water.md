@@ -2,7 +2,7 @@
 title: Water Effect
 description: So many dot products!
 date: 2025-11-10
-tags: demo blog
+tags: ["demo", "blog"]
 ---
 
 <iframe src="/demos/water" title="Water Shader Demo"> </iframe>

@@ -2,7 +2,7 @@
 title: Conway's Game of Life
 description: Implementing life in ThreeJS
 date: 2024-11-25
-tags: demo blog
+tags: ["demo", "blog"]
 ---
 
 <iframe src="/demos/life" title="Conway's Game of Life Demo"> </iframe>

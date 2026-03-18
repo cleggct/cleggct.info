@@ -2,7 +2,7 @@
 title: Boids
 description: Implementing boids with ThreeJS
 date: 2025-02-10
-tags: demo blog
+tags: ["demo", "blog"]
 ---
 
 <iframe src="/demos/boids" title="Boids Demo"></iframe>

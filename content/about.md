@@ -15,6 +15,8 @@ and audio synthesis (did you know you can construct a .wav file just by writing
 frequency data to a buffer?) Mostly self-taught, mostly for fun. I'm drawn to
 constrained environments where you have to be clever about resources.
 
+[GitHub](https://www.github.com/cleggct)  |  [LinkedIn](https://www.linkedin.com/in/christa-clegg)
+
 <br>
 
 ---

@@ -13,10 +13,6 @@ Hold down the mouse and drag it across to paint randomness on the game world.
 
 <br>
 
----
-
-<br>
-
 ## Explanation
 
 Whenever I learn a new graphics API I always end up implementing two programs first: the Mandelbrot

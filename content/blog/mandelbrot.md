@@ -13,10 +13,6 @@ Click and drag to select a region to zoom in on. Right click to zoom back out.
 
 <br>
 
----
-
-<br>
-
 ## Explanation
 
 This was my first time implementing the continuous coloration algorithm for the Mandelbrot

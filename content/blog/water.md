@@ -11,10 +11,6 @@ tags: ["demo", "blog"]
 
 <br>
 
----
-
-<br>
-
 ## Explanation
 
 Going into this I had no idea how to write a water shader but once I started looking into it I learned that you can make

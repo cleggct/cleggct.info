@@ -11,10 +11,6 @@ tags: ["demo", "blog"]
 
 <br>
 
----
-
-<br>
-
 ## Explanation
 
 During the winter of 2024 I was applying to jobs, checking out the websites of various companies and I came across one that

@@ -11,10 +11,6 @@ tags: ["demo", "blog"]
 
 <br>
 
----
-
-<br>
-
 ## Explanation
 
 This demo was a little different from the others in that it does not use any custom shaders, the whole thing is made with

@@ -9,6 +9,12 @@ tags: ["demo", "blog"]
 
 <a href="/demos/boids">Fullscreen</a>
 
+<br>
+
+---
+
+<br>
+
 ## Explanation
 
 This demo was a little different from the others in that it does not use any custom shaders, the whole thing is made with
@@ -17,6 +23,8 @@ GPU-acceleration via compute shaders, and in fact the first version of this demo
 traditional shoehorned OpenGL compute shader stuff, but I decided to go without it to get rid of the additional dependency.
 WebGPU offers built in support for compute shaders, but browser support for WebGPU is still lacking, so I decided to stick
 with WebGL/ThreeJS. Hence all the velocity calculations and position updates are being done on the CPU.
+
+<br>
 
 ## Source
 

@@ -9,6 +9,12 @@ tags: ["demo", "blog"]
 
 <a href="/demos/water">Fullscreen</a>
 
+<br>
+
+---
+
+<br>
+
 ## Explanation
 
 Going into this I had no idea how to write a water shader but once I started looking into it I learned that you can make
@@ -38,6 +44,8 @@ That covers how the water shader works. The ripple simulation is a grid-based fi
 are produced by adding a gaussian source at the desired location in the grid. You can read more about finite-difference
 Laplacian approximation <a href="https://gpuopen.com/learn/amd-lab-notes/amd-lab-notes-finite-difference-docs-laplacian_part1/">here</a>.
 If you want to learn more about water simulations check out <a href="https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models">this</a> and <a href="https://developer.nvidia.com/gpugems/gpugems2/part-ii-shading-lighting-and-shadows/chapter-18-using-vertex-texture-displacement">this</a>.
+
+<br>
 
 ## Source
 

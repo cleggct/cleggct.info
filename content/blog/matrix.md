@@ -9,6 +9,12 @@ tags: ["demo", "blog"]
 
 <a href="/demos/matrix">Fullscreen</a>
 
+<br>
+
+---
+
+<br>
+
 ## Explanation
 
 During the winter of 2024 I was applying to jobs, checking out the websites of various companies and I came across one that
@@ -29,6 +35,8 @@ others stay more or less the same. Then I layered on some undulating per-charact
 scanlines with sine and cosine operations. The result is something kind of lo-fi, not quite as nice as the thing that inspired
 it but I kind of like it. I made it amber in color because I love those old amber displays like in the Compaq Portable 3 and
 the Grid Compass.
+
+<br>
 
 ## Source
 

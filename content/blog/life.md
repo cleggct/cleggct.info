@@ -7,19 +7,25 @@ tags: ["demo", "blog"]
 
 <iframe src="/demos/life" title="Conway's Game of Life Demo"> </iframe>
 
-<a href="/demos/life">Fullscreen</a>
-
-## Explanation
-
 Hold down the mouse and drag it across to paint randomness on the game world.
 
+<a href="/demos/life">Fullscreen</a>
+
 <br>
+
+---
+
+<br>
+
+## Explanation
 
 Whenever I learn a new graphics API I always end up implementing two programs first: the Mandelbrot
 set and Conway's Game of Life. <a href="/blog/mandelbrot">I already did the Mandelbrot set</a> so the
 game of life was next. I am just using a ThreeJS data texture to represent the game world which I am
 periodically updating. Everything is done on the CPU. One issue I ran into was the pixels were not perfectly
 square and uniform, that stumped me for a bit but it turned out I just needed to turn off mipmaps.
+
+<br>
 
 ## Source
 

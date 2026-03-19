@@ -7,13 +7,17 @@ tags: ["demo", "blog"]
 
 <iframe src="/demos/mandelbrot" title="Mandelbrot Viewer Demo"> </iframe>
 
-<a href="/demos/mandelbrot">Fullscreen</a>
-
-## Explanation
-
 Click and drag to select a region to zoom in on. Right click to zoom back out.
 
+<a href="/demos/mandelbrot">Fullscreen</a>
+
 <br>
+
+---
+
+<br>
+
+## Explanation
 
 This was my first time implementing the continuous coloration algorithm for the Mandelbrot
 set. I had always been intimidated by this algorithm as the mathematics looked quite
@@ -41,6 +45,8 @@ The code itself actually does the usual iterative escape time approach with an a
 of computing the continuous error term and adding it to the iteration number, so in
 practice it is really just like adding an additional smoothing step to the naive escape
 time algorithm.
+
+<br>
 
 ## Source
 

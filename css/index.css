@@ -115,11 +115,6 @@ h3,
 h4 {
 	font-family: "Sporting Grotesque", sans-serif;
 }
-h2,
-h3,
-h4 {
-	margin-top: 1em;
-}
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
 .visually-hidden:not(:focus):not(:active) {
@@ -173,6 +168,11 @@ p {
 
 li {
 	line-height: 1.5;
+}
+
+main ul,
+main ol {
+	padding-left: 1.5em;
 }
 
 a[href] {
